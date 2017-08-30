@@ -1,0 +1,11 @@
+- name: Desktop GUI Packages
+  dnf: name={{ item }} state=installed
+  with_items:
+    - firefox
+    - chromium
+    - gimp
+    - libreoffice-writer
+    - libreoffice-calc
+    - libreoffice-impress
+    - libreoffice-draw
+

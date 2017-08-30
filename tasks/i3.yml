@@ -1,0 +1,20 @@
+- name: i3 Packages
+  dnf: name={{ item }} state=installed
+  with_items:
+    - i3
+    - i3lock
+    - i3status
+    - dmenu
+    - lightdm
+    - rxvt-unicode
+    - scrot
+
+- name: Disable GDM
+  service: name=gdm enabled=false masked=true
+
+- name: Enable LightDM
+  file:
+    state: link
+    force: true
+    src: /usr/lib/systemd/system/lightdm.service
+    path: /etc/systemd/system/display-manager.service

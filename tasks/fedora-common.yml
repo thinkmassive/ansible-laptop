@@ -1,0 +1,57 @@
+- name: Common Fedora Packages
+  dnf: name={{ item }} state=installed
+  with_items:
+    - yum-utils
+    - dnf-plugins-core
+
+- name: Common GNU/Linux Packages
+  dnf: name={{ item }} state=installed
+  with_items:
+    - bash
+    - bash-doc
+    - bash-completion
+    - man-db
+    - man-pages
+    - tree
+    - tmux
+    - tmuxinator
+    - vim-enhanced
+    - rsync
+    - wget
+    - curl
+    - jq
+    - htop
+    - powertop
+    - iotop
+    - gnupg
+    - feh
+    - xpdf
+
+- name: Ansible Packages
+  dnf: name={{ item }} state=installed
+  with_items:
+    - ansible
+    - ansible-doc
+    - ansible-lint
+
+- name: Development Packages
+  dnf: name={{ item }} state=installed
+  with_items:
+    - git
+    - python-pip
+    - python-docs
+
+- name: Hardware Packages
+  dnf: name={{ item }} state=installed
+  with_items:
+    - xbacklight
+    - pavucontrol
+    - pavumeter
+    - rfkill
+    - acpi
+    - lshw
+
+- name: Multimedia Packages
+  dnf: name={{ item }} state=installed
+  with_items:
+    - ImageMagick
